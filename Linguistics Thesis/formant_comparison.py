@@ -379,20 +379,20 @@ def plot_ash_e_perceived(perceived_list, formant_dict, colors):
     ind = 0
     import pdb; pdb.set_trace()
     for subject_name in name_list:
-        if 'æ' not in formant_dict[subject_name].keys():
+        if 'ʊ' not in formant_dict[subject_name].keys():
             continue
         #import pdb; pdb.set_trace()
         if not ("subject" in subject_name or "CONTROL" in subject_name):
             print("didnt work")
             continue
-        plt.scatter(perceived_list[ind], formant_dict[subject_name]['æ']['f2_avg'], label=subject_name, color=colors[subject_name])
+        plt.scatter(perceived_list[ind], formant_dict[subject_name]['ʊ']['f2_avg'], label=subject_name, color=colors[subject_name])
         ind += 1
-    ax.set_title('[æ]/[ɛ] Normalized F2 vs. Perceived accent strength')
+    ax.set_title('ʊ Normalized F2 vs. Perceived accent strength')
     ax.set_xlabel('Perceived accent strength')
     ax.set_ylabel('F2 (P_mean-normalized) (Hz)')
     #ax.set_xlim(0,5)
     #ax.set_ylim(0,6000)
-    print_euclids(formant_dict, name_list, ['æ', 'ɛ'])
+    print_euclids(formant_dict, name_list, ['ʊ'])
     plt.legend()
     #fig.suptitle("Regular formant vs. formant normalized with P_min")
     print("random phones about to show!")
